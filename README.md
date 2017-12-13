@@ -1,3 +1,5 @@
+**I'm trying to kepp this library alaive**
+
 ![JSQMessagesViewController banner](https://raw.githubusercontent.com/jessesquires/JSQMessagesViewController/develop/Assets/jsq_messages_banner.png)
 
 [![Build Status](https://secure.travis-ci.org/jessesquires/JSQMessagesViewController.svg)](https://travis-ci.org/jessesquires/JSQMessagesViewController) [![Version Status](https://img.shields.io/cocoapods/v/JSQMessagesViewController.svg)][podLink] [![license MIT](https://img.shields.io/cocoapods/l/JSQMessagesViewController.svg)][mitLink] [![codecov](https://codecov.io/gh/jessesquires/JSQMessagesViewController/branch/develop/graph/badge.svg)](https://codecov.io/gh/jessesquires/JSQMessagesViewController) [![Platform](https://img.shields.io/cocoapods/p/JSQMessagesViewController.svg)][docsLink]
@@ -34,14 +36,9 @@ See the [website](http://jessesquires.github.io/JSQMessagesViewController) for t
 ### [CocoaPods](https://cocoapods.org/) (recommended)
 
 ````ruby
-# For latest release in cocoapods
-pod 'JSQMessagesViewController'
 
-# Latest on develop
-pod 'JSQMessagesViewController', :git => 'https://github.com/jessesquires/JSQMessagesViewController.git', :branch => 'develop'
+pod 'JSQMessagesViewController', :git => 'https://github.com/shahnewaz469/JSQMessagesViewController.git', :branch => 'master'
 
-# For version 5.3.2
-pod 'JSQMessagesViewController', :git => 'https://github.com/jessesquires/JSQMessagesViewController', :branch => 'version_5.3.2_patch'
 ````
 
 ## Getting Started
