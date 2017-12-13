@@ -1,4 +1,4 @@
-**I'm trying to kepp this library alaive**
+**I'm trying to keep this library alaive**
 
 ![JSQMessagesViewController banner](https://raw.githubusercontent.com/jessesquires/JSQMessagesViewController/develop/Assets/jsq_messages_banner.png)
 
