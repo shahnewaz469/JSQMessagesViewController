@@ -21,4 +21,9 @@ Pod::Spec.new do |s|
 
 	s.frameworks = 'QuartzCore', 'CoreGraphics', 'CoreLocation', 'MapKit', 'MobileCoreServices', 'AVFoundation'
 	s.requires_arc = true
+
+    s.dependency 'JSQSystemSoundPlayer', '~> 2.0.1'
+
+    s.deprecated = false
+
 end

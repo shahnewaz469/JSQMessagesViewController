@@ -32,5 +32,11 @@
     "MobileCoreServices",
     "AVFoundation"
   ],
-  "requires_arc": true
+  "requires_arc": true,
+  "dependencies": {
+    "JSQSystemSoundPlayer": [
+      "~> 2.0.1"
+    ]
+  },
+  "deprecated": false
 }
