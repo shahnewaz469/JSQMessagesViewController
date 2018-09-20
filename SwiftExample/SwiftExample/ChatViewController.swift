@@ -67,14 +67,14 @@ class ChatViewController: JSQMessagesViewController {
     }
     
     func setupBackButton() {
-        let backButton = UIBarButtonItem(title: "Back", style: UIBarButtonItemStyle.plain, target: self, action: #selector(backButtonTapped))
+        let backButton = UIBarButtonItem(title: "Back", style: UIBarButtonItem.Style.plain, target: self, action: #selector(backButtonTapped))
         navigationItem.leftBarButtonItem = backButton
     }
-    func backButtonTapped() {
+    @objc func backButtonTapped() {
         dismiss(animated: true, completion: nil)
     }
     
-    func receiveMessagePressed(_ sender: UIBarButtonItem) {
+    @objc func receiveMessagePressed(_ sender: UIBarButtonItem) {
         /**
          *  DEMO ONLY
          *

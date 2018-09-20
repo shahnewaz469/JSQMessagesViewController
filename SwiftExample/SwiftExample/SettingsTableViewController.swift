@@ -49,15 +49,15 @@ class SettingsTableViewController: UITableViewController {
         
         return cell
     }
-    func switchValueChanged(_ sender: UISwitch) {
+    @objc func switchValueChanged(_ sender: UISwitch) {
         defaults.set(sender.isOn, forKey: rows[sender.tag].rawValue)
     }
     
     func setupBackButton() {
-        let backButton = UIBarButtonItem(title: "Back", style: UIBarButtonItemStyle.plain, target: self, action: #selector(backButtonTapped))
+        let backButton = UIBarButtonItem(title: "Back", style: UIBarButtonItem.Style.plain, target: self, action: #selector(backButtonTapped))
         navigationItem.leftBarButtonItem = backButton
     }
-    func backButtonTapped() {
+    @objc func backButtonTapped() {
         dismiss(animated: true, completion: nil)
     }
 
