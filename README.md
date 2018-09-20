@@ -1,5 +1,3 @@
-**I'm trying to keep this library alive**
-
 ![JSQMessagesViewController banner](https://raw.githubusercontent.com/jessesquires/JSQMessagesViewController/develop/Assets/jsq_messages_banner.png)
 
 [![Build Status](https://secure.travis-ci.org/jessesquires/JSQMessagesViewController.svg)](https://travis-ci.org/jessesquires/JSQMessagesViewController) [![Version Status](https://img.shields.io/cocoapods/v/JSQMessagesViewController.svg)][podLink] [![license MIT](https://img.shields.io/cocoapods/l/JSQMessagesViewController.svg)][mitLink] [![codecov](https://codecov.io/gh/jessesquires/JSQMessagesViewController/branch/develop/graph/badge.svg)](https://codecov.io/gh/jessesquires/JSQMessagesViewController) [![Platform](https://img.shields.io/cocoapods/p/JSQMessagesViewController.svg)][docsLink]
@@ -18,7 +16,7 @@ See the [website](http://jessesquires.github.io/JSQMessagesViewController) for t
 
 ## Design Goals
 
-- Closely mimic the [iOS Messages](http://www.apple.com/ios/messages/) style and behavior
+- Closely mimic [iMessage](http://www.apple.com/ios/messages/) style and behavior
 - [SOLID](https://en.wikipedia.org/wiki/SOLID_(object-oriented_design)) design
 - Easy customization and extension for clients
 
@@ -36,9 +34,11 @@ See the [website](http://jessesquires.github.io/JSQMessagesViewController) for t
 ### [CocoaPods](https://cocoapods.org/) (recommended)
 
 ````ruby
+# For latest release in cocoapods
+pod 'JSQMessagesViewController'
 
-pod 'JSQMessagesViewController', :git => 'https://github.com/shahnewaz469/JSQMessagesViewController.git', :branch => 'master'
-
+# Latest on develop
+pod 'JSQMessagesViewController', :git => 'https://github.com/jessesquires/JSQMessagesViewController.git', :branch => 'develop'
 ````
 
 ## Getting Started
@@ -63,16 +63,15 @@ Read the docs, [available here][docsLink] via [@CocoaDocs](https://twitter.com/C
 - Jesse Squires ([**@jesse_squires**](https://twitter.com/jesse_squires))
 - Harlan Haskans ([**@harlanhaskins**](https://github.com/harlanhaskins))
 - Eli Burke ([**@eliburke**](https://github.com/eliburke))
+- Sebastian Ludwig ([**@sebastianludwig**](https://github.com/sebastianludwig))
+- Lucas Huang ([**@Lucashuang0802**](https://github.com/Lucashuang0802))
+- Dan Leonard ([**@macmedan**](https://github.com/macmedan))
 
 ## Contributing
 
 Please follow these sweet [contribution guidelines](https://github.com/jessesquires/JSQMessagesViewController/blob/develop/.github/CONTRIBUTING.md).
 
 > **Interested in becoming a core contributor with push access? See our [onboarding guide](https://github.com/jessesquires/JSQMessagesViewController/blob/develop/Documentation/contributor_onboarding.md) for details.**
-
-## Donate
-
-Support the development of this **free** library! **[Donate](https://cash.me/$jsq)** via [Square Cash](https://cash.me/).
 
 ## Credits
 
