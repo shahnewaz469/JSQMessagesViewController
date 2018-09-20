@@ -283,23 +283,6 @@ static void JSQInstallWorkaroundForSheetPresentationIssue26295020(void) {
     return UIInterfaceOrientationMaskAll;
 }
 
-
-//- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
-//{
-//    [super willRotateToInterfaceOrientation:toInterfaceOrientation duration:duration];
-//    [self.collectionView.collectionViewLayout invalidateLayoutWithContext:[JSQMessagesCollectionViewFlowLayoutInvalidationContext context]];
-//}
-
-//- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
-//{
-//    [super didRotateFromInterfaceOrientation:fromInterfaceOrientation];
-//    if (self.showTypingIndicator) {
-//        self.showTypingIndicator = NO;
-//        self.showTypingIndicator = YES;
-//        [self.collectionView reloadData];
-//    }
-//}
-
 - (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator {
     [coordinator animateAlongsideTransition:^(id<UIViewControllerTransitionCoordinatorContext> context) {
          [self.collectionView.collectionViewLayout invalidateLayoutWithContext:[JSQMessagesCollectionViewFlowLayoutInvalidationContext context]];
