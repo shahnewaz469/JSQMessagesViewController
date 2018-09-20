@@ -22,15 +22,9 @@
 
 #import "NSString+JSQMessages.h"
 
-@interface JSQMessagesComposerTextView ()
-
-@property (nonatomic, weak) NSLayoutConstraint *heightConstraint;
-@property (nonatomic, weak) NSLayoutConstraint *minHeightConstraint;
-@property (nonatomic, weak) NSLayoutConstraint *maxHeightConstraint;
-
-@end
 
 @implementation JSQMessagesComposerTextView
+
 @synthesize pasteDelegate;
 
 #pragma mark - Initialization
@@ -55,7 +49,7 @@
     self.scrollsToTop = NO;
     self.userInteractionEnabled = YES;
 
-    self.font = [UIFont preferredFontForTextStyle:UIFontTextStyleBody];
+    self.font = [UIFont systemFontOfSize:16.0f];
     self.textColor = [UIColor blackColor];
     self.textAlignment = NSTextAlignmentNatural;
 
@@ -69,9 +63,6 @@
 
     _placeHolder = nil;
     _placeHolderTextColor = [UIColor lightGrayColor];
-    _placeHolderInsets = UIEdgeInsetsMake(5.0, 7.0, 5.0, 7.0);
-
-    [self associateConstraints];
 
     [self jsq_addTextViewNotificationObservers];
 }
@@ -94,52 +85,6 @@
 - (void)dealloc
 {
     [self jsq_removeTextViewNotificationObservers];
-}
-
-// TODO: we should just set these from the xib
-- (void)associateConstraints
-{
-    // iterate through all text view's constraints and identify
-    // height, max height and min height constraints.
-
-    for (NSLayoutConstraint *constraint in self.constraints) {
-        if (constraint.firstAttribute == NSLayoutAttributeHeight) {
-
-            if (constraint.relation == NSLayoutRelationEqual) {
-                self.heightConstraint = constraint;
-            }
-
-            else if (constraint.relation == NSLayoutRelationLessThanOrEqual) {
-                self.maxHeightConstraint = constraint;
-            }
-
-            else if (constraint.relation == NSLayoutRelationGreaterThanOrEqual) {
-                self.minHeightConstraint = constraint;
-            }
-        }
-    }
-}
-
-- (void)layoutSubviews
-{
-    [super layoutSubviews];
-
-    // calculate size needed for the text to be visible without scrolling
-    CGSize sizeThatFits = [self sizeThatFits:self.frame.size];
-    float newHeight = sizeThatFits.height;
-
-    // if there is any minimal height constraint set, make sure we consider that
-    if (self.maxHeightConstraint) {
-        newHeight = MIN(newHeight, self.maxHeightConstraint.constant);
-    }
-
-    // if there is any maximal height constraint set, make sure we consider that
-    if (self.minHeightConstraint) {
-        newHeight = MAX(newHeight, self.minHeightConstraint.constant);
-    }
-
-    // update the height constraint
-    self.heightConstraint.constant = newHeight;
 }
 
 #pragma mark - Composer text view
@@ -171,27 +116,7 @@
     [self setNeedsDisplay];
 }
 
-- (void)setPlaceHolderInsets:(UIEdgeInsets)placeHolderInsets
-{
-    if (UIEdgeInsetsEqualToEdgeInsets(placeHolderInsets, _placeHolderInsets)) {
-        return;
-    }
-    
-    _placeHolderInsets = placeHolderInsets;
-    [self setNeedsDisplay];
-}
-
 #pragma mark - UITextView overrides
-
-
-- (void)setBounds:(CGRect)bounds
-{
-    [super setBounds:bounds];
-
-    if (self.contentSize.height <= self.bounds.size.height + 1){
-        self.contentOffset = CGPointZero; // Fix wrong contentOfset
-    }
-}
 
 - (void)setText:(NSString *)text
 {
@@ -232,8 +157,8 @@
 
     if ([self.text length] == 0 && self.placeHolder) {
         [self.placeHolderTextColor set];
-        
-        [self.placeHolder drawInRect:UIEdgeInsetsInsetRect(rect, self.placeHolderInsets)
+
+        [self.placeHolder drawInRect:CGRectInset(rect, 7.0f, 5.0f)
                       withAttributes:[self jsq_placeholderTextAttributes]];
     }
 }
@@ -307,5 +232,4 @@
     [UIMenuController sharedMenuController].menuItems = nil;
     return [super canPerformAction:action withSender:sender];
 }
-
 @end
